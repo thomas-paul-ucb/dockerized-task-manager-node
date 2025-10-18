@@ -27,6 +27,10 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 
+const tasksRouter = require('./routes/tasks');
+app.use('/tasks', tasksRouter);
+
+
 // Health check route
 app.get('/', (req, res) => {
   res.send('Task Manager API is working!');
